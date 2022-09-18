@@ -8,13 +8,11 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import { FaComment, FaSearch } from "react-icons/fa";
-import Modal from "react-bootstrap/Modal";
 import "../css/cardUser.css";
 
 const CardUser = () => {
   const [token, setToken] = useState([]);
   const [carduser, setCarduser] = useState([]);
-  const [show, seetShow] = useState(false);
 
   const navigate = useNavigate();
   const refreshToken = async () => {

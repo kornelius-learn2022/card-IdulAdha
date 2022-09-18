@@ -160,10 +160,35 @@ const getAllData = async (req, res, next) => {
   });
   res.status(200).json(cards);
 };
-const cookie = (req, res, next) => {
-  res.cookie("Hallod", "iyaTodd");
-  next();
+const getIdData = async (req, res, next) => {
+  const id = req.query.key;
+  const cards = await card_contens.findOne({
+    where: {
+      id_user: id,
+    },
+    attributes: [
+      ["nama_user", "nama"],
+      ["pesan_user", "pesan"],
+      ["id_user", "id"],
+    ],
+  });
+  res.status(200).json(cards);
 };
+const updateData = async (req, res, next) => {
+  const { nama, pesan, id } = req.body;
+  const cards = await card_contens.upsert({
+    id_user: id,
+    nama_user: nama,
+    pesan_user: pesan,
+    attributes: [
+      ["nama_user", "nama"],
+      ["pesan_user", "pesan"],
+      ["id_user", "id"],
+    ],
+  });
+  res.status(200).json(cards);
+};
+
 module.exports = {
   login,
   verifi,
@@ -171,6 +196,6 @@ module.exports = {
   getAllData,
   register,
   logout,
-  cookie,
-  alternativeLogin,
+  getIdData,
+  updateData,
 };

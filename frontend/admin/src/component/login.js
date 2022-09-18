@@ -28,7 +28,6 @@ const Login = () => {
         navigate("/admin");
       })
       .catch((err) => {
-        console.log(err.response.data.message);
         setValidatedLogin(err.response.data.message);
         navigate("/login");
       }),
