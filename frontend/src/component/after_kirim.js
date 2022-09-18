@@ -61,7 +61,7 @@ function CardShow() {
             href={`http://localhost:5000/#/Card/${response.link}`}
             onClick={handleSubmit}
           >
-            {`http://localhost:5000/#/Card/${response.link}`}
+            {`http://localhost:5000x  /#/Card/${response.link}`}
           </a>
         </p>
         <button id="salin" onClick={Copy}>
