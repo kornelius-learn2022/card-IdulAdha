@@ -180,13 +180,8 @@ const updateData = async (req, res, next) => {
     id_user: id,
     nama_user: nama,
     pesan_user: pesan,
-    attributes: [
-      ["nama_user", "nama"],
-      ["pesan_user", "pesan"],
-      ["id_user", "id"],
-    ],
   });
-  res.status(200).json(cards);
+  res.sendStatus(200);
 };
 
 module.exports = {

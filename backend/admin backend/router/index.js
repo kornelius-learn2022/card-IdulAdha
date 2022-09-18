@@ -12,6 +12,6 @@ router.post("/refresh", controller.refreshToken);
 router.post("/adminRegister", controller.register);
 router.post("/logout", controller.logout);
 router.get("/edit", controller.getIdData);
-router.post("/update", controller.updateData);
+router.put("/update", controller.updateData);
 
 module.exports = router;
