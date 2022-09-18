@@ -1,0 +1,22 @@
+.admin-card-users {
+  margin-top: 7vh;
+  margin-left: 0px;
+  margin-right: 0px;
+  max-width: 100%;
+}
+.head-dashboard {
+  max-height: 10%;
+  max-width: 100%;
+  border-bottom: 3px solid #002647;
+}
+.head-card-users {
+  max-height: 10%;
+  max-width: 100%;
+  border-bottom: 3px solid #002647;
+}
+.content-card-users {
+  padding-top: 2vh;
+}
+.card-search {
+  height: 36px;
+}

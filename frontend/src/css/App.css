@@ -1,0 +1,24 @@
+html,
+body {
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+}
+#root {
+  display: flex;
+  justify-content: center;
+  margin: 0, 0, 0, 0;
+  width: 1520px;
+  height: 900px;
+}
+@media screen and (max-height: 800px) and (max-width: 400px) {
+  #root {
+    width: 400px;
+    height: 800px;
+  }
+}
+@media screen and (max-height: 900px) and (max-width: 360px) {
+  #root {
+    width: 360px;
+    height: 810px;
+  }
+}

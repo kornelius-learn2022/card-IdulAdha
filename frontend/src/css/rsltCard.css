@@ -1,0 +1,81 @@
+#showCard {
+  position: absolute;
+  display: flex;
+  width: 1520px;
+  height: 900px;
+  background-image: url("../image/masjid.png");
+  background-repeat: no-repeat;
+  background-size: 1520px 810px;
+  background-color: #002647;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+p#resultCard {
+  margin-top: 400px;
+  width: inherit;
+  padding-top: 40px;
+  color: aliceblue;
+}
+p#resultCard #nama {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  text-align: center;
+}
+p#resultCard #say {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+p#resultCard #pesan {
+  padding-top: 0px;
+  margin-top: 0px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 25px;
+  text-align: center;
+  color: rgb(254, 219, 122);
+}
+p#akun {
+  margin-top: 100px;
+  text-align: center;
+}
+a#akun {
+  color: rgb(254, 219, 122);
+  text-decoration: none;
+}
+@media screen and (max-height: 800px) and (max-width: 400px) {
+  #showCard {
+    position: absolute;
+    display: flex;
+    width: 400px;
+    height: 800px;
+    background-image: url("../image/masjid.png");
+    background-repeat: no-repeat;
+    background-size: 800px 500px;
+    background-color: #002647;
+  }
+  p#resultCard {
+    width: inherit;
+    border-radius: 5px;
+    height: 200px;
+    margin-top: 120px;
+  }
+  p#resultCard #pesan {
+    font-size: 20px;
+  }
+  @media screen and (max-height: 810px) and (max-width: 360px) {
+    #showCard {
+      position: absolute;
+      display: flex;
+      width: 360px;
+      height: 810px;
+      background-image: url("../image/masjid.png");
+      background-repeat: no-repeat;
+      background-size: 800px 500px;
+      background-color: #002647;
+    }
+  }
+  p#resultCard #pesan {
+    font-size: 20px;
+  }
+}

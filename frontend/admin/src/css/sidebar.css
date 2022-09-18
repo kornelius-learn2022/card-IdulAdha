@@ -1,0 +1,50 @@
+.containerSidebar {
+  display: flex;
+}
+.sidebar {
+  position: relative;
+  padding-top: 30px;
+  width: 22vw;
+  background: #002647;
+  height: 100vh;
+}
+
+.bars {
+  display: flex;
+  padding-left: 10px;
+  font-size: 20px;
+  color: #fff;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  transition: all 0.5s;
+}
+
+.active {
+  color: rgb(254, 219, 122);
+  border-bottom: 2px solid rgb(254, 219, 122);
+}
+.email {
+  font-size: 15px;
+}
+a {
+  display: flex;
+  color: #fff;
+  gap: 11px;
+  text-decoration: none;
+}
+a:hover {
+  color: rgb(254, 219, 122);
+}
+.profile {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  border: 2px solid #fff;
+  border-radius: 50px;
+  color: #fff;
+}
+.profile-icon {
+  margin-top: 2vh;
+  font-size: 40px;
+}

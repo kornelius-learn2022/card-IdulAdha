@@ -1,0 +1,14 @@
+{
+  "name": "percobaan",
+  "version": "1.0.0",
+  "description": "percobaan share express to cpanel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kornelius",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}

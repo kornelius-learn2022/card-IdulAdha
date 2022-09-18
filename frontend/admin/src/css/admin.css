@@ -1,0 +1,30 @@
+.containerAdmin {
+  display: flex;
+  flex-direction: row;
+  margin-left: 0;
+  margin-right: 0;
+}
+.admin-dashboard {
+  margin-top: 7vh;
+  margin-left: 0px;
+  margin-right: 0px;
+  max-width: 100%;
+}
+.head-dashboard {
+  max-height: 10%;
+  max-width: 100%;
+  border-bottom: 3px solid #002647;
+}
+.icon-title {
+  display: flex;
+}
+.icon-title p {
+  font-size: 33px;
+  font-weight: 500;
+  color: #002647;
+}
+
+.icon-home {
+  color: #002647;
+  font-size: 20px;
+}

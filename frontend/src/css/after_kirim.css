@@ -1,0 +1,29 @@
+#Show {
+  width: inherit;
+  width: inherit;
+  display: flex;
+  justify-content: center;
+  background: #002647;
+}
+#afterKirim {
+  width: 340px;
+  height: 300px;
+  padding: 10px 10px 10px 10px;
+  margin-top: 100px;
+  border-radius: 5px;
+  border: solid 2px rgb(254, 219, 122);
+  background: #fff;
+}
+p {
+  text-align: justify;
+}
+#salin {
+  margin-left: 120px;
+  margin-right: 120px;
+}
+@media screen and (max-height: 810px) and (max-width: 360px) {
+  .Show {
+    height: 810px;
+    width: 360px;
+  }
+}
