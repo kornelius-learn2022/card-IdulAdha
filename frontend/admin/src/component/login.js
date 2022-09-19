@@ -24,7 +24,6 @@ const Login = () => {
         withCredentials: true,
       })
       .then((res) => {
-        console.log(res.data);
         navigate("/admin");
       })
       .catch((err) => {

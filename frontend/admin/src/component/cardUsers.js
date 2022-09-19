@@ -73,11 +73,10 @@ const CardUser = () => {
       getAllData(token);
     }
   }, [token]);
-  console.log(carduser);
+
   const edit = (e) => {
     e.preventDefault();
-    const edit = document.getElementById("edit").value;
-    navigate(`/edit?key=${edit}`);
+    navigate(`edit?key=${e.target.value}`);
   };
   const hapus = (e) => {
     e.preventDefault();

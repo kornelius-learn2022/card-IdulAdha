@@ -175,13 +175,23 @@ const getIdData = async (req, res, next) => {
   res.status(200).json(cards);
 };
 const updateData = async (req, res, next) => {
-  const { nama, pesan, id } = req.body;
-  const cards = await card_contens.upsert({
-    id_user: id,
-    nama_user: nama,
-    pesan_user: pesan,
-  });
-  res.sendStatus(200);
+  try {
+    const { nama, pesan, id } = req.body;
+
+    if (nama === "" && pesan === "") {
+      return false;
+    } else {
+      const cards = await card_contens.upsert({
+        id_user: id,
+        nama_user: nama,
+        pesan_user: pesan,
+      });
+      res.sendStatus(200);
+    }
+  } catch (error) {
+    res.send(403).json("Data jangan kosong");
+    next();
+  }
 };
 
 module.exports = {
