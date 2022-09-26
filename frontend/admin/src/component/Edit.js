@@ -65,7 +65,6 @@ function EditShow() {
     await axios
       .put("http://localhost:5000/update", data)
       .then((res) => {
-        console.log(res.data);
         setModalShow(true);
       })
       .catch((err) => {

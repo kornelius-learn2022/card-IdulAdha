@@ -193,6 +193,15 @@ const updateData = async (req, res, next) => {
     next();
   }
 };
+const deletByid = async (req, res, next) => {
+  const id = req.query.key;
+  const cards = await card_contens.destroy({
+    where: {
+      id_user: id,
+    },
+  });
+  res.sendStatus(200);
+};
 
 module.exports = {
   login,
@@ -203,4 +212,5 @@ module.exports = {
   logout,
   getIdData,
   updateData,
+  deletByid,
 };

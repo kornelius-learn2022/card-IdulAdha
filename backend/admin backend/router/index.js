@@ -13,5 +13,5 @@ router.post("/adminRegister", controller.register);
 router.post("/logout", controller.logout);
 router.get("/edit", controller.getIdData);
 router.put("/update", controller.updateData);
-
+router.delete("/delete", controller.deletByid);
 module.exports = router;

@@ -4,6 +4,7 @@ import Row from "react-bootstrap/esm/Row";
 import Stack from "react-bootstrap/Stack";
 import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
+import Modal from "react-bootstrap/Modal";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
@@ -12,9 +13,45 @@ import "../css/cardUser.css";
 
 const CardUser = () => {
   const [token, setToken] = useState([]);
+  const [deleteByid, setdeletByid] = useState(0);
   const [carduser, setCarduser] = useState([]);
-
+  const [modalShow, setModalShow] = useState(false);
   const navigate = useNavigate();
+  const handleClose = () => {
+    setModalShow(false);
+  };
+  const MyVerticallyCenteredModal = (props) => {
+    return (
+      <Modal
+        {...props}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        onHide={handleClose}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">PESAN</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>Apakah anda akan menghapus data ini?</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="danger" onClick={hapus}>
+            Delete
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  };
+  const hapus = async () => {
+    await axios
+      .delete(`http://localhost:5000/delete?key=${deleteByid}`)
+      .then((res) => {
+        setModalShow(false);
+        window.location.reload(false);
+      })
+      .catch((err) => {});
+  };
   const refreshToken = async () => {
     await axios
       .post(
@@ -78,9 +115,10 @@ const CardUser = () => {
     e.preventDefault();
     navigate(`edit?key=${e.target.value}`);
   };
-  const hapus = (e) => {
+  const edithapus = (e) => {
     e.preventDefault();
-    console.log("Haio");
+    setdeletByid(e.target.value);
+    setModalShow(true);
   };
   return (
     <div className="containerAdmin">
@@ -130,23 +168,21 @@ const CardUser = () => {
                       >
                         Edit
                       </Button>{" "}
-                      <Button variant="danger" onClick={hapus}>
+                      <Button
+                        value={item.id}
+                        variant="danger"
+                        onClick={edithapus}
+                      >
                         Delete
                       </Button>
                     </td>
                   </tr>
                 ))}
-
-                {/* <tr key={carduser[0].id}>
-                  <td>1</td>
-                  <td>{carduser[0].nama}</td>
-                  <td>{carduser[0].pesan}</td>
-                  <td>Edit || Pesan</td>
-                </tr> */}
               </tbody>
             </Table>
           </Row>
         </Row>
+        <MyVerticallyCenteredModal show={modalShow} />
       </Container>
     </div>
   );
